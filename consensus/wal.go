@@ -159,6 +159,7 @@ func (wal *baseWAL) FlushAndSync() error {
 // Use Wait() to ensure it's finished shutting down
 // before cleaning up files.
 func (wal *baseWAL) OnStop() {
+	fmt.Printf("hello, world\n") // dmjp
 	wal.flushTicker.Stop()
 	wal.FlushAndSync()
 	wal.group.Stop()
